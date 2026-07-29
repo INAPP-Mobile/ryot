@@ -1,0 +1,11 @@
+{
+  "SERVER_ADMIN_ACCESS_TOKEN": {
+    "description": "A long random string used for administrative API access to your Ryot instance. Generate one with `openssl rand -hex 32`.",
+    "isOptional": false
+  },
+  "FRONTEND_URL": {
+    "defaultValue": "",
+    "description": "Public URL where your Ryot instance will be accessible. Leave empty to auto-detect from the Railway domain.",
+    "isOptional": true
+  }
+}
