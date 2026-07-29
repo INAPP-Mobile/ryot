@@ -1,6 +1,6 @@
 {
   "DATABASE_URL": {
-    "value": "${{Postgres.DATABASE_URL}}",
+    "value": "Postgres.DATABASE_URL",
     "description": "PostgreSQL connection string. Auto-linked to Postgres companion service."
   },
   "SERVER_ADMIN_ACCESS_TOKEN": {
