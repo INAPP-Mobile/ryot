@@ -1,0 +1,17 @@
+[
+  {
+    "serviceName": "ryot-db",
+    "image": "postgres:18-alpine",
+    "port": 5432,
+    "envMapping": {
+      "DATABASE_URL": "postgresql://${{POSTGRES_USER}}:${{POSTGRES_PASSWORD}}@${{RYOT_DB_HOSTNAME}}:${{RYOT_DB_PORT}}/${{POSTGRES_DB}}"
+    },
+    "variables": {
+      "POSTGRES_USER": "postgres",
+      "POSTGRES_PASSWORD": {
+        "generated": true
+      },
+      "POSTGRES_DB": "postgres"
+    }
+  }
+]
