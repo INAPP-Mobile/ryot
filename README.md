@@ -9,7 +9,7 @@ Ryot is a self-hosted platform for tracking your media (movies, shows, books, ga
 - Export your data anytime
 - REST API for integrations
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/nkT6M7)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/T4-W1Y)
 
 ## Why Deploy Ryot on Railway?
 
