@@ -1,0 +1,22 @@
+{
+  "DATABASE_URL": {
+    "defaultValue": "",
+    "description": "PostgreSQL connection string. Auto-linked to Postgres companion service.",
+    "isOptional": false
+  },
+  "SERVER_ADMIN_ACCESS_TOKEN": {
+    "defaultValue": "",
+    "description": "A long random string for administrative API access. Generate one with `openssl rand -hex 32`.",
+    "isOptional": false
+  },
+  "FRONTEND_URL": {
+    "defaultValue": "",
+    "description": "Public URL where your Ryot instance will be accessible. Leave empty to auto-detect from Railway public domain.",
+    "isOptional": true
+  },
+  "API_URL": {
+    "defaultValue": "http://127.0.0.1:5000",
+    "description": "Internal backend API URL (fixed wiring — do not change).",
+    "isOptional": true
+  }
+}

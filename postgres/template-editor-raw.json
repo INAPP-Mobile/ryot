@@ -1,0 +1,14 @@
+{
+  "POSTGRES_USER": {
+    "value": "${{secret(8)}}",
+    "description": "PostgreSQL username. Auto-generated on first deploy."
+  },
+  "POSTGRES_PASSWORD": {
+    "value": "${{secret(16)}}",
+    "description": "PostgreSQL password. Auto-generated on first deploy."
+  },
+  "POSTGRES_DB": {
+    "value": "${{secret(8)}}",
+    "description": "PostgreSQL database name. Auto-generated on first deploy."
+  }
+}

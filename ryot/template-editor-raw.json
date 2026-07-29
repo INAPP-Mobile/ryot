@@ -1,0 +1,18 @@
+{
+  "DATABASE_URL": {
+    "value": "${{Postgres.DATABASE_URL}}",
+    "description": "PostgreSQL connection string. Auto-linked to Postgres companion service."
+  },
+  "SERVER_ADMIN_ACCESS_TOKEN": {
+    "value": "${{secret(32)}}",
+    "description": "A long random string for administrative API access. Auto-generated on first deploy."
+  },
+  "FRONTEND_URL": {
+    "value": "https://${{RAILWAY_PUBLIC_DOMAIN}}",
+    "description": "Public URL for your Ryot instance. Auto-configured via Railway public domain."
+  },
+  "API_URL": {
+    "value": "http://127.0.0.1:5000",
+    "description": "Internal backend API URL. Fixed wiring — Ryot backend runs on port 5000 within the container."
+  }
+}
