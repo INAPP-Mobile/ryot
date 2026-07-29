@@ -1,4 +1,6 @@
-Ryot is a self-hosted platform for tracking your media (movies, shows, books, games, anime, manga) and fitness activities (exercises, measurements, nutrition). All your data stays on your server.
+Self-hosted media & fitness tracker. All your data stays on your server.
+
+Ryot is a self-hosted platform for tracking movies, shows, books, games, anime, manga, and fitness activities.
 
 **Features:**
 - Track movies, TV shows, books, video games, anime, manga, and music
@@ -9,7 +11,14 @@ Ryot is a self-hosted platform for tracking your media (movies, shows, books, ga
 - Export your data anytime
 - REST API for integrations
 
+# Deploy and Host
+
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/uAvsNN)
+
+### Deployment Dependencies
+
+- **PostgreSQL**: Railway provisions a managed PostgreSQL database automatically. No manual configuration needed.
+- **Server Admin Access Token**: A long random string that authenticates you as the administrator on first login.
 
 ## Why Deploy Ryot on Railway?
 
@@ -29,14 +38,6 @@ Running Ryot on Railway eliminates server management entirely. With one click yo
 
 - **PostgreSQL**: Railway provisions a managed PostgreSQL database automatically. No manual configuration needed.
 - **Server Admin Access Token**: A long random string that authenticates you as the administrator on first login.
-
-### Optional Integrations
-
-| Service | Config Variable | Purpose |
-|---------|----------------|---------|
-| TMDB | `MOVIES_AND_SHOWS_TMDB_ACCESS_TOKEN` | Movie and TV show metadata |
-| Twitch | `VIDEO_GAMES_TWITCH_CLIENT_ID`, `VIDEO_GAMES_TWITCH_CLIENT_SECRET` | Video game metadata |
-| Spotify | (via Ryot UI config) | Music tracking |
 
 ## Environment Variables
 
