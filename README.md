@@ -13,7 +13,7 @@ Ryot is a self-hosted platform for tracking movies, shows, books, games, anime, 
 
 # Deploy and Host
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/uAvsNN)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/ryot-1)
 
 ### Deployment Dependencies
 
