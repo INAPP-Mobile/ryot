@@ -1,7 +1,6 @@
 {
-  "DATABASE_URL": {
-    "defaultValue": "",
-    "description": "PostgreSQL connection string. Auto-constructed from credentials.",
+  "POSTGRES_PASSWORD": {
+    "description": "PostgreSQL superuser password — must be non-empty. Ryot stores media & fitness data here.",
     "isOptional": false
   }
 }

@@ -1,4 +1,16 @@
 {
+  "POSTGRES_USER": {
+    "value": "ryot",
+    "description": "PostgreSQL superuser username."
+  },
+  "POSTGRES_PASSWORD": {
+    "value": "${{POSTGRES_PASSWORD}}",
+    "description": "PostgreSQL superuser password. Set via deploy form — must be non-empty."
+  },
+  "POSTGRES_DB": {
+    "value": "ryot",
+    "description": "PostgreSQL database name."
+  },
   "DATABASE_URL": {
     "value": "postgresql://${{POSTGRES_USER}}:${{POSTGRES_PASSWORD}}@${{PRIVATE_DOMAIN}}:5432/${{POSTGRES_DB}}",
     "description": "PostgreSQL connection string constructed from auto-generated credentials."
