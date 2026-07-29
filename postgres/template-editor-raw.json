@@ -1,14 +1,10 @@
 {
-  "POSTGRES_USER": {
-    "value": "${{secret(8)}}",
-    "description": "PostgreSQL username. Auto-generated on first deploy."
+  "DATABASE_URL": {
+    "value": "postgresql://${{POSTGRES_USER}}:${{POSTGRES_PASSWORD}}@${{PRIVATE_DOMAIN}}:5432/${{POSTGRES_DB}}",
+    "description": "PostgreSQL connection string constructed from auto-generated credentials."
   },
-  "POSTGRES_PASSWORD": {
-    "value": "${{secret(16)}}",
-    "description": "PostgreSQL password. Auto-generated on first deploy."
-  },
-  "POSTGRES_DB": {
-    "value": "${{secret(8)}}",
-    "description": "PostgreSQL database name. Auto-generated on first deploy."
+  "PGDATA": {
+    "value": "/var/lib/postgresql/data/pgdata",
+    "description": "PostgreSQL data directory under the volume mount. Required by Railway Postgres image."
   }
 }

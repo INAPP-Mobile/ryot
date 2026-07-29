@@ -1,17 +1,7 @@
 {
-  "POSTGRES_USER": {
-    "defaultValue": "${{secret(8)}}",
-    "description": "PostgreSQL username. Auto-generated on first deploy.",
-    "isOptional": false
-  },
-  "POSTGRES_PASSWORD": {
-    "defaultValue": "${{secret(16)}}",
-    "description": "PostgreSQL password. Auto-generated on first deploy.",
-    "isOptional": false
-  },
-  "POSTGRES_DB": {
-    "defaultValue": "${{secret(8)}}",
-    "description": "PostgreSQL database name. Auto-generated on first deploy.",
+  "DATABASE_URL": {
+    "defaultValue": "",
+    "description": "PostgreSQL connection string. Auto-constructed from credentials.",
     "isOptional": false
   }
 }
