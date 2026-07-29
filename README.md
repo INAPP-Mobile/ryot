@@ -5,48 +5,59 @@ Ryot is a self-hosted platform for tracking your media (movies, shows, books, ga
 - Log workouts, measurements, and nutritional data
 - Import from Trakt, MAL, Goodreads, Plex, Jellyfin, and more
 - Automatic AI-powered tagging and recommendations
-- Clean, responsive web UI
+- Clean, responsive web UI with PWA support
 - Export your data anytime
 - REST API for integrations
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/TEMPLATE_CODE)
 
-## Features
+## Why Deploy Ryot on Railway?
 
-- **Media Tracking**: Movies & TV shows (TMDB), video games (IGDB/Twitch), books (manual/import), anime & manga (MAL), music (ListenBrainz)
-- **Fitness Tracking**: Workout logging with exercises, sets, reps, and weights. Track body measurements and nutritional intake
-- **Integrations**: Import history from Trakt, MyAnimeList, Goodreads, Plex, Jellyfin, ListenBrainz, and more
-- **Dashboard**: Get insights into your media consumption and fitness progress
-- **Multi-user**: Support for multiple users with separate tracking
-- **Progressive Web App**: Install as a native app on mobile devices
-- **Full Text Search**: Quickly find any tracked item
-- **REST API**: Build custom integrations
+Running Ryot on Railway eliminates server management entirely. With one click you get a production-ready Ryot instance with a managed PostgreSQL database, auto-deploys from GitHub, automatic HTTPS, and global CDN. No VPS setup, no Docker Compose wrangling, no database administration.
 
-## Getting Started
+## Common Use Cases
 
-1. Click the "Deploy on Railway" button above
-2. Railway automatically provisions a PostgreSQL database
-3. Set the `SERVER_ADMIN_ACCESS_TOKEN` environment variable to a secure random string
-4. Set the `FRONTEND_URL` to your Railway-generated domain (e.g., `https://ryot-production.up.railway.app`)
-5. Wait for the deployment to complete, then visit your domain
-6. Log in with your admin access token
+- **Media enthusiasts**: Track every movie, show, book, and game you consume with ratings, reviews, and detailed metadata
+- **Fitness tracking**: Log workouts, body measurements, and nutrition — all in one place alongside your media habits
+- **Data hoarders**: Import years of history from Trakt, MyAnimeList, Goodreads, Plex, and Jellyfin into a single searchable database
+- **Self-hosters**: Replace SaaS tracking services with a private instance where you control every byte of your personal data
+- **Small groups**: Share a Ryot instance with family or friends — multi-user support with separate tracking per person
+
+## Dependencies for Deployment
+
+### Required
+
+- **PostgreSQL**: Railway provisions a managed PostgreSQL database automatically. No manual configuration needed.
+- **Server Admin Access Token**: A long random string that authenticates you as the administrator on first login.
+
+### Optional Integrations
+
+| Service | Config Variable | Purpose |
+|---------|----------------|---------|
+| TMDB | `MOVIES_AND_SHOWS_TMDB_ACCESS_TOKEN` | Movie and TV show metadata |
+| Twitch | `VIDEO_GAMES_TWITCH_CLIENT_ID`, `VIDEO_GAMES_TWITCH_CLIENT_SECRET` | Video game metadata |
+| Spotify | (via Ryot UI config) | Music tracking |
 
 ## Environment Variables
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `DATABASE_URL` | PostgreSQL connection string (auto-filled) | Yes |
-| `SERVER_ADMIN_ACCESS_TOKEN` | Admin authentication token | Yes |
-| `FRONTEND_URL` | Public URL of your Ryot instance | Yes |
-| `TZ` | Timezone (IANA format, e.g., `Europe/Amsterdam`) | No |
+| `DATABASE_URL` | PostgreSQL connection string (auto-filled by Railway) | Yes |
+| `SERVER_ADMIN_ACCESS_TOKEN` | Admin authentication token — set to a random string | Yes |
+| `FRONTEND_URL` | Public URL of your Ryot instance (leave empty to auto-detect) | No |
+| `TZ` | Timezone in IANA format (e.g., `America/New_York`) | No |
 | `DISABLE_TELEMETRY` | Set to `true` to disable telemetry | No |
-| `MOVIES_AND_SHOWS_TMDB_ACCESS_TOKEN` | TMDB access token for movie/TV tracking | No |
-| `VIDEO_GAMES_TWITCH_CLIENT_ID` | Twitch client ID for game tracking | No |
-| `VIDEO_GAMES_TWITCH_CLIENT_SECRET` | Twitch client secret for game tracking | No |
+| `MOVIES_AND_SHOWS_TMDB_ACCESS_TOKEN` | TMDB access token for movie/TV metadata | No |
+| `VIDEO_GAMES_TWITCH_CLIENT_ID` | Twitch client ID for game metadata | No |
+| `VIDEO_GAMES_TWITCH_CLIENT_SECRET` | Twitch client secret for game metadata | No |
 
 ## Volumes
 
-Ryot stores all data in the PostgreSQL database. No persistent volumes are required.
+Ryot stores all data in PostgreSQL. No persistent volume is required for the application service — your data lives in the managed database.
+
+## About Hosting
+
+Ryot runs on a single container with the backend API and frontend served together on port 8000. On Railway, the app is fronted by automatic HTTPS via the Railway edge network, with DDoS protection and global CDN. Sleep after inactivity is disabled by default to keep the instance always available.
 
 ## FAQ
 
