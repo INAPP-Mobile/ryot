@@ -1,7 +1,7 @@
 {
   "DATABASE_URL": {
     "defaultValue": "",
-    "description": "PostgreSQL connection string. Auto-linked to Postgres companion service.",
+    "description": "PostgreSQL connection string. Auto-linked from the Postgres companion service.",
     "isOptional": false
   },
   "SERVER_ADMIN_ACCESS_TOKEN": {
