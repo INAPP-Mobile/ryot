@@ -1,4 +1,4 @@
-FROM ignisda/ryot:v10
+FROM ignisda/ryot:v10.5.8
 
 EXPOSE 8000
 
